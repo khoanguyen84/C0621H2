@@ -28,10 +28,6 @@ namespace Lession1
             foreach(int item in array){
                 Console.Write($"{item} - {Array.IndexOf(array, item)} ");
             }
-
-            Array.ForEach(array, new Action<int>(){
-                
-            })
         }
         static void ShowName(string name){
             Console.WriteLine(name);
