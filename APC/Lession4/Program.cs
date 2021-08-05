@@ -10,7 +10,8 @@ namespace Lession4
             // Console.WriteLine(bun.ToString());
             // Console.WriteLine(bun.Info());
 
-            // Animal pock = new Dog("Pock", 1, "Blue");
+            Animal pock = new Dog("Pock", 1, "Blue");
+            //Animal a = new Animal();
 
             Dog bun = new Dog("Bum", 2, "Black");
             Cat tom = new Cat("Tom",10, 4);

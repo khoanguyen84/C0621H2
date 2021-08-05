@@ -1,6 +1,6 @@
 namespace Lession4
 {
-    class Cat : Animal
+    class Cat : Animal, IAnimal
     {
 
         public int Legs { get; set; }
@@ -11,6 +11,25 @@ namespace Lession4
 
         public override string ToString(){
             return $"{base.ToString()}, Legs:{Legs}";
+        }
+        public string Speak()
+        {
+            return "Meo meo";
+        }
+
+        public string Move()
+        {
+            return "Move by 4 legs";
+        }
+
+        public string Walk()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public string Swimming()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

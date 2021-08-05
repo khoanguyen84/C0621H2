@@ -1,0 +1,16 @@
+C:\CodeGym\Class\C0621H2\APC\ProductManagement\bin\Debug\net5.0\ProductManagement.exe
+C:\CodeGym\Class\C0621H2\APC\ProductManagement\bin\Debug\net5.0\ProductManagement.deps.json
+C:\CodeGym\Class\C0621H2\APC\ProductManagement\bin\Debug\net5.0\ProductManagement.runtimeconfig.json
+C:\CodeGym\Class\C0621H2\APC\ProductManagement\bin\Debug\net5.0\ProductManagement.runtimeconfig.dev.json
+C:\CodeGym\Class\C0621H2\APC\ProductManagement\bin\Debug\net5.0\ProductManagement.dll
+C:\CodeGym\Class\C0621H2\APC\ProductManagement\bin\Debug\net5.0\ref\ProductManagement.dll
+C:\CodeGym\Class\C0621H2\APC\ProductManagement\bin\Debug\net5.0\ProductManagement.pdb
+C:\CodeGym\Class\C0621H2\APC\ProductManagement\obj\Debug\net5.0\ProductManagement.csproj.AssemblyReference.cache
+C:\CodeGym\Class\C0621H2\APC\ProductManagement\obj\Debug\net5.0\ProductManagement.GeneratedMSBuildEditorConfig.editorconfig
+C:\CodeGym\Class\C0621H2\APC\ProductManagement\obj\Debug\net5.0\ProductManagement.AssemblyInfoInputs.cache
+C:\CodeGym\Class\C0621H2\APC\ProductManagement\obj\Debug\net5.0\ProductManagement.AssemblyInfo.cs
+C:\CodeGym\Class\C0621H2\APC\ProductManagement\obj\Debug\net5.0\ProductManagement.csproj.CoreCompileInputs.cache
+C:\CodeGym\Class\C0621H2\APC\ProductManagement\obj\Debug\net5.0\ProductManagement.dll
+C:\CodeGym\Class\C0621H2\APC\ProductManagement\obj\Debug\net5.0\ref\ProductManagement.dll
+C:\CodeGym\Class\C0621H2\APC\ProductManagement\obj\Debug\net5.0\ProductManagement.pdb
+C:\CodeGym\Class\C0621H2\APC\ProductManagement\obj\Debug\net5.0\ProductManagement.genruntimeconfig.cache

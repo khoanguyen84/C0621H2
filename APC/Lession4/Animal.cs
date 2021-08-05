@@ -1,7 +1,8 @@
 using System;
 namespace Lession4
 {
-    class Animal
+    // sealed class Animal: Object
+    abstract class Animal: Object
     {
         public string Name { get; set; }
         public int Age { get; set; }
@@ -22,5 +23,13 @@ namespace Lession4
         {
             return $"Name: {Name}, Age: {Age}";
         }
+        // public sealed override string ToString()
+        // {
+        //     return $"Name: {Name}, Age: {Age}";
+        // }
+
+        // public abstract string Speak();
+
+        // public abstract string Move();
     }
 }
