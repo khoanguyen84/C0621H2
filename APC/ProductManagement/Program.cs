@@ -18,6 +18,7 @@ namespace ProductManagement
         }
         private static void BuildMenu(out int selected)
         {
+            int choose = 0;
             do
             {
                 Console.WriteLine("========== CALCULATOR ==========");
@@ -28,9 +29,10 @@ namespace ProductManagement
                 Console.WriteLine("5. Exit");
                 Console.WriteLine("================================");
                 Console.Write("Choose a function: ");
-                int.TryParse(Console.ReadLine(), out selected);
+                int.TryParse(Console.ReadLine(), out choose);
             }
-            while (selected < min || selected > max);
+            while (choose < min || choose > max);
+            selected = choose;
         }
 
         public static void Process()
