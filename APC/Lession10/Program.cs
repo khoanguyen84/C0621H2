@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Lession10
 {
@@ -22,15 +23,15 @@ namespace Lession10
             //     Console.WriteLine();
             // }
 
-            List<Student> students = new List<Student>();
-            Student std1 = new Student(){
-                StudentId = 1,
-                Fullname = "Khoa",
-                Age = 18,
-                Email = "Khoa.nguyen@codegym.vn"
-            };
-            students.Add(std1);
-            Console.WriteLine(students[0]);
+            // List<Student> students = new List<Student>();
+            // Student std1 = new Student(){
+            //     StudentId = 1,
+            //     Fullname = "Khoa",
+            //     Age = 18,
+            //     Email = "Khoa.nguyen@codegym.vn"
+            // };
+            // students.Add(std1);
+            // Console.WriteLine(students[0]);
 
             // Queue<Student> stds = new Queue<Student>();
             
@@ -60,9 +61,53 @@ namespace Lession10
             //     Console.WriteLine(std.ToString());
             // }
 
-            LinkedList<Student> stds = new LinkedList<Student>();
-            LinkedListNode<Student> node = new LinkedListNode<Student>(std1);
-            stds.AddFirst(node);
+            // LinkedList<Student> stds = new LinkedList<Student>();
+            // LinkedListNode<Student> node = new LinkedListNode<Student>(std1);
+            // stds.AddFirst(node);
+
+            //Lamda Expression
+            //LinQ
+
+            List<Student> students = new List<Student>();
+            Student std1 = new Student(){
+                StudentId = 1,
+                Fullname = "Khoa",
+                Age = 18,
+                Email = "Khoa.nguyen@codegym.vn"
+            };
+            students.Add(std1);
+            Student std2 = new Student(){
+                StudentId = 2,
+                Fullname = "Nguyên",
+                Age = 20,
+                Email = "nguyen.truong@codegym.vn"
+            };
+            students.Add(std2);
+            int maxAge = 0;
+            Student StudentWithMaxAge = new Student();
+            foreach(Student std in students){
+                if(std.Age > maxAge){
+                    maxAge = std.Age;
+                    StudentWithMaxAge = std;
+                }
+            }
+            Console.WriteLine(StudentWithMaxAge.ToString());
+
+            int max = students.Max(s => s.Age);
+            Student StudentWithHighAge = students.Single(s => s.Age == max);
+
+            Console.WriteLine(StudentWithHighAge.ToString());
+
+            Student stdLinq = (from s in students
+                                where s.Age == (students.Max(s => s.Age))
+                            select s
+                         ).Single();
+            
+            Console.WriteLine(stdLinq.ToString());
+
+            Student st = students.Find(s => s.Fullname.Contains("a") && s.Age >=18);
+            students.Remove(st);
+            Console.WriteLine(st.ToString());
         }
     }
 }
