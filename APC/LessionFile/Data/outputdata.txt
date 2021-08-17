@@ -1,0 +1,2 @@
+Total matrix : 250
+Total primes in matrix : 15

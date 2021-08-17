@@ -21,8 +21,11 @@ namespace LessionFile
             using(StreamReader sr = File.OpenText(Path.Combine(path,"list.txt"))){
                 string line = string.Empty;
                 int index = 0;
-                while((line = sr.ReadLine()) != string.Empty){
-                    Console.WriteLine($"Line {++index} - {line.ToUpper()}");
+                // while(!string.IsNullOrEmpty(line = sr.ReadLine())){
+                //     Console.WriteLine($"Line {++index} - {line}");
+                // }
+                while((line = sr.ReadLine()) != null){
+                    Console.WriteLine($"Line {++index} - {line}");
                 }
             }
         }
