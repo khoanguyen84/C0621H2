@@ -1,0 +1,48 @@
+{
+  "Bills": [
+    {
+      "BillId": 1,
+      "Date": "2021-10-10T00:00:00",
+      "IsPaid": false,
+      "TotalAmount": 350000,
+      "BillDetails": [
+        {
+          "ProductId": 1,
+          "ProductName": "Áo thun",
+          "Price": 100000,
+          "Quantity": 2,
+          "Amount": 200000
+        },
+        {
+          "ProductId": 2,
+          "ProductName": "Quần jean",
+          "Price": 150000,
+          "Quantity": 1,
+          "Amount": 150000
+        }
+      ]
+    },
+    {
+      "BillId": 2,
+      "Date": "2021-08-20T15:41:58.2672085+07:00",
+      "IsPaid": false,
+      "TotalAmount": 500000,
+      "BillDetails": [
+        {
+          "ProductId": 4,
+          "ProductName": "Quần đùi 5",
+          "Price": 50000,
+          "Quantity": 5,
+          "Amount": 250000
+        },
+        {
+          "ProductId": 4,
+          "ProductName": "Quần đùi 5",
+          "Price": 50000,
+          "Quantity": 5,
+          "Amount": 250000
+        }
+      ]
+    }
+  ]
+}

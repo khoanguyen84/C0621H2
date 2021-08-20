@@ -27,6 +27,22 @@ namespace CGShop
                 return false;
             }
         }
+
+        public List<Product> Find(string keyword)
+        {
+            var productId = 0;
+            int.TryParse(keyword, out productId);
+            if(productId == 0){
+                 return productList.products.Where(p => p.productName.ToLower().Contains(keyword.ToLower())).ToList();
+            }
+            return productList.products.Where(p => p.productName.Contains(keyword) || p.productId == productId).ToList();
+        }
+
+        public Product FindById(int productId)
+        {
+            return productList.products.SingleOrDefault(p => p.productId== productId);
+        }
+
         public List<Product> Get(){
             return productList.products;
         }

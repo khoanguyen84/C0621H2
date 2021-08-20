@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CGShop
 {
@@ -33,7 +34,38 @@ namespace CGShop
             //     Console.Write("Something went wrong, please contact administrator.");
             // }
 
-            cgShopService.ShowProduct();
+            // cgShopService.ShowProduct();
+            // Console.Write("Enter keyword: ");
+            // var keyword = Console.ReadLine();
+            // cgShopService.FindProduct(keyword);
+            // cgShopService.FindBill(1);
+            var billDetails = new List<BillDetail>();
+            Console.Write("Enter Product ID:");
+            var pdt1_Id = int.Parse(Console.ReadLine());
+            var pdt1 = cgShopService.FindProductById(pdt1_Id);
+            Console.Write("Enter quantity: ");
+            var quantity1 = int.Parse(Console.ReadLine());
+            var bd1 = new BillDetail(){
+                Price = pdt1.price,
+                ProductId = pdt1.productId,
+                ProductName = pdt1.productName,
+                Quantity = quantity1
+            };
+            billDetails.Add(bd1);
+            Console.Write("Enter Product ID:");
+            var pdt2_Id = int.Parse(Console.ReadLine());
+            var pdt2 = cgShopService.FindProductById(pdt1_Id);
+            Console.Write("Enter quantity: ");
+            var quantity2 = int.Parse(Console.ReadLine());
+            var bd2 = new BillDetail(){
+                Price = pdt1.price,
+                ProductId = pdt1.productId,
+                ProductName = pdt1.productName,
+                Quantity = quantity2
+            };
+            billDetails.Add(bd2);
+
+            cgShopService.CreateBill(billDetails);
         }
     }
 }
