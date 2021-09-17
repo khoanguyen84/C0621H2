@@ -13,9 +13,4 @@ namespace CGShop
             return $"{productId}\t{productName}\t\t\t{price}\t\t\t{quantity}";
         }
     }
-
-    class ProductList
-    {
-        public List<Product> products { get; set; }
-    }
 }

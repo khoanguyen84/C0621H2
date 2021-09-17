@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
-    <StartupObject>Lession1.Methods</StartupObject>
+    <StartupObject>Lession1.Program</StartupObject>
   </PropertyGroup>
 
 </Project>

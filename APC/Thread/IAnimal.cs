@@ -1,0 +1,6 @@
+namespace ThreadDemo
+{
+    interface IAnimal
+    {
+    }
+}

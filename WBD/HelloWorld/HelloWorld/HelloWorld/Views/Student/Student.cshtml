@@ -1,0 +1,17 @@
+﻿@using System.Collections.Generic;
+@model List<HelloWorld.Models.Student>
+    @{
+        ViewData["Title"] = "Student Page";
+    }
+
+    @*<h1>Student -> Index -> @ViewData["StudentId"]</h1>*@
+    @foreach(var std in Model){
+    <div>
+        <h1>StudentId: @std.StudentId</h1>
+        <h1>Fullname: @std.Fullname</h1>
+        <h1>Gender: @std.Gender</h1>
+        <h1>Dob: @std.Dob</h1>
+        <hr />
+    </div>
+    }
+

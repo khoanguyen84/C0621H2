@@ -1,0 +1,16 @@
+C:\CodeGym\Class\C0621H2\APC\Thread\bin\Debug\net5.0\Thread.exe
+C:\CodeGym\Class\C0621H2\APC\Thread\bin\Debug\net5.0\Thread.deps.json
+C:\CodeGym\Class\C0621H2\APC\Thread\bin\Debug\net5.0\Thread.runtimeconfig.json
+C:\CodeGym\Class\C0621H2\APC\Thread\bin\Debug\net5.0\Thread.runtimeconfig.dev.json
+C:\CodeGym\Class\C0621H2\APC\Thread\bin\Debug\net5.0\Thread.dll
+C:\CodeGym\Class\C0621H2\APC\Thread\bin\Debug\net5.0\ref\Thread.dll
+C:\CodeGym\Class\C0621H2\APC\Thread\bin\Debug\net5.0\Thread.pdb
+C:\CodeGym\Class\C0621H2\APC\Thread\obj\Debug\net5.0\Thread.csproj.AssemblyReference.cache
+C:\CodeGym\Class\C0621H2\APC\Thread\obj\Debug\net5.0\Thread.GeneratedMSBuildEditorConfig.editorconfig
+C:\CodeGym\Class\C0621H2\APC\Thread\obj\Debug\net5.0\Thread.AssemblyInfoInputs.cache
+C:\CodeGym\Class\C0621H2\APC\Thread\obj\Debug\net5.0\Thread.AssemblyInfo.cs
+C:\CodeGym\Class\C0621H2\APC\Thread\obj\Debug\net5.0\Thread.csproj.CoreCompileInputs.cache
+C:\CodeGym\Class\C0621H2\APC\Thread\obj\Debug\net5.0\Thread.dll
+C:\CodeGym\Class\C0621H2\APC\Thread\obj\Debug\net5.0\ref\Thread.dll
+C:\CodeGym\Class\C0621H2\APC\Thread\obj\Debug\net5.0\Thread.pdb
+C:\CodeGym\Class\C0621H2\APC\Thread\obj\Debug\net5.0\Thread.genruntimeconfig.cache
