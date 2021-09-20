@@ -46,8 +46,12 @@ namespace HelloWorld
 
             app.UseAuthorization();
 
+            //Convension routing
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                    name: "routing",
+                    pattern: "{controller=Home}/{action=Index}/{stdId}/{fn}");
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

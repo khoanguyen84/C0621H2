@@ -41,5 +41,23 @@ namespace HelloWorld.Controllers
             students.Add(std3);
             return View("~/Views/Student/Student.cshtml", students);
         }
+
+        //Attribute routing
+        //[Route("/Student/Detail/{stdId}/{fn}")]
+        public IActionResult Detail(int stdId, string fn)
+        {
+            var studentDetail = new StudentDetail()
+            {
+                Fullname = fn,
+                StudentId = stdId
+            };
+            return View(studentDetail);
+        }
+    }
+
+    public class StudentDetail
+    {
+        public int StudentId { get; set; }
+        public string Fullname { get; set; }
     }
 }
