@@ -20,21 +20,21 @@ namespace HelloWorld.Controllers
                 StudentId = 1,
                 Fullname = "Khoa Nguyen",
                 Dob = DateTime.Parse("2000-10-10"),
-                Gender = "Male"
+                Gender = true
             };
             var std2 = new Student()
             {
                 StudentId = 2,
                 Fullname = "Nam Thu",
                 Dob = DateTime.Parse("2000-10-10"),
-                Gender = "Male"
+                Gender = true
             };
             var std3 = new Student()
             {
                 StudentId = 3,
                 Fullname = "Huy Thu",
                 Dob = DateTime.Parse("2000-10-10"),
-                Gender = "Male"
+                Gender = true
             };
             students.Add(std1);
             students.Add(std2);
@@ -52,6 +52,22 @@ namespace HelloWorld.Controllers
                 StudentId = stdId
             };
             return View(studentDetail);
+        }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Student student)
+        {
+            if (ModelState.IsValid)
+            {
+
+            }
+            return View();
         }
     }
 

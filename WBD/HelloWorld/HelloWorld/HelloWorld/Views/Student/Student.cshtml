@@ -6,7 +6,8 @@
     }
 
     @*<h1>Student -> Index -> @ViewData["StudentId"]</h1>*@
-    @foreach(var std in Model){
+<a class="btn btn-primary btn-lg" asp-controller="Student" asp-action="Create">Create</a>
+@foreach(var std in Model){
 <div>
     <h1>StudentId: @std.StudentId</h1>
     <h1>Fullname: @std.Fullname</h1>
