@@ -1,4 +1,5 @@
 ﻿using HelloWorld.Models;
+using HelloWorld.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,37 +10,16 @@ namespace HelloWorld.Controllers
 {
     public class StudentController : Controller
     {
-        public IActionResult Index()
-        {
-            //ViewBag.StudentId = id;
-            //ViewData["StudentId"] = id;
+        private readonly IStudentService studentService;
 
-            var students = new List<Student>();
-            var std1 = new Student()
-            {
-                StudentId = 1,
-                Fullname = "Khoa Nguyen",
-                Dob = DateTime.Parse("2000-10-10"),
-                Gender = true
-            };
-            var std2 = new Student()
-            {
-                StudentId = 2,
-                Fullname = "Nam Thu",
-                Dob = DateTime.Parse("2000-10-10"),
-                Gender = true
-            };
-            var std3 = new Student()
-            {
-                StudentId = 3,
-                Fullname = "Huy Thu",
-                Dob = DateTime.Parse("2000-10-10"),
-                Gender = true
-            };
-            students.Add(std1);
-            students.Add(std2);
-            students.Add(std3);
-            return View("~/Views/Student/Student.cshtml", students);
+        //private static StudentService studentService = new StudentService();
+        public StudentController(IStudentService studentService)
+        {
+            this.studentService = studentService;
+        }
+        public IActionResult Index()
+        {            
+            return View("~/Views/Student/Student.cshtml", studentService.Gets());
         }
 
         //Attribute routing
@@ -65,7 +45,8 @@ namespace HelloWorld.Controllers
         {
             if (ModelState.IsValid)
             {
-
+                studentService.Create(student);
+                return RedirectToAction("Index");
             }
             return View();
         }

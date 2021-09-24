@@ -1,0 +1,20 @@
+[
+  {
+    "StudentId": 1,
+    "Fullname": "Khoa Nguyen",
+    "Gender": true,
+    "Dob": "2000-10-10T00:00:00"
+  },
+  {
+    "StudentId": 2,
+    "Fullname": "Justin Best",
+    "Gender": false,
+    "Dob": "2017-10-18T00:00:00"
+  },
+  {
+    "StudentId": 3,
+    "Fullname": "Aladdin Mclean",
+    "Gender": false,
+    "Dob": "1981-11-12T00:00:00"
+  }
+]
