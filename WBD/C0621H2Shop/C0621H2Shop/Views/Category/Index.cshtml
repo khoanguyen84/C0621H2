@@ -1,0 +1,26 @@
+﻿@model List<Category>
+@{
+    ViewData["Title"] = "Category";
+}
+
+<table class="table table-bordered table-hover table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>#ID</th>
+            <th>Category name</th>
+            <th>Products</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(Category cat in Model)
+            {
+                <tr>
+                    <td>@cat.CategoryId</td>
+                    <td>@cat.CategoryName</td>
+                    <td class="text-center">@cat.Products.Count()</td>
+                    <td></td>
+                </tr>
+            }
+    </tbody>
+</table>

@@ -10,6 +10,16 @@
     <Compile Remove="Migrations\20210927092927_Create_Category_Table.Designer.cs" />
     <Compile Remove="Migrations\20210927093643_Create_Category_Table.cs" />
     <Compile Remove="Migrations\20210927093643_Create_Category_Table.Designer.cs" />
+    <Compile Remove="Migrations\20210928081106_Add_IsDelete_Column_In_Category_Table.cs" />
+    <Compile Remove="Migrations\20210928081106_Add_IsDelete_Column_In_Category_Table.Designer.cs" />
+    <Compile Remove="Migrations\20210928081213_Add_IsDelete_Column_In_Category_Table.cs" />
+    <Compile Remove="Migrations\20210928081213_Add_IsDelete_Column_In_Category_Table.Designer.cs" />
+    <Compile Remove="Migrations\20210928082543_Seeding_Category_Table.cs" />
+    <Compile Remove="Migrations\20210928082543_Seeding_Category_Table.Designer.cs" />
+    <Compile Remove="Migrations\20210928082950_Seeding_Category_Table.cs" />
+    <Compile Remove="Migrations\20210928082950_Seeding_Category_Table.Designer.cs" />
+    <Compile Remove="Migrations\20210928083835_Create_Product_Table.cs" />
+    <Compile Remove="Migrations\20210928083835_Create_Product_Table.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,7 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Migrations\" />
+    <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
 </Project>

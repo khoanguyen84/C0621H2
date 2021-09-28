@@ -3,14 +3,16 @@ using C0621H2Shop.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace C0621H2Shop.Migrations
 {
     [DbContext(typeof(C0621H1ShopDBContext))]
-    partial class C0621H1ShopDBContextModelSnapshot : ModelSnapshot
+    [Migration("20210928084107_Create_Product_Table")]
+    partial class Create_Product_Table
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -74,9 +76,6 @@ namespace C0621H2Shop.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Pictures")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -94,47 +93,7 @@ namespace C0621H2Shop.Migrations
 
                     b.HasKey("ProductId");
 
-                    b.HasIndex("CategoryId");
-
                     b.ToTable("Products");
-
-                    b.HasData(
-                        new
-                        {
-                            ProductId = 1,
-                            CategoryId = 1,
-                            Pictures = "~/wwwroot/images/iphone12.jpg",
-                            Price = 18000000,
-                            ProductName = "iPhone 12",
-                            Quantity = 12
-                        },
-                        new
-                        {
-                            ProductId = 2,
-                            CategoryId = 2,
-                            Pictures = "~/wwwroot/images/laptop.jpg",
-                            Price = 12000000,
-                            ProductName = "Asus",
-                            Quantity = 10
-                        },
-                        new
-                        {
-                            ProductId = 3,
-                            CategoryId = 3,
-                            Pictures = "~/wwwroot/images/pc.jpg",
-                            Price = 13500000,
-                            ProductName = "PC",
-                            Quantity = 7
-                        });
-                });
-
-            modelBuilder.Entity("C0621H2Shop.Entities.Product", b =>
-                {
-                    b.HasOne("C0621H2Shop.Entities.Category", "Category")
-                        .WithMany("Products")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

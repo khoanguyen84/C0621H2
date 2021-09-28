@@ -16,7 +16,8 @@ namespace C0621H2Shop.Entities
         [Required]
         public string Description { get; set; }
         [Required]
-        [StringLength(20)]
+        [StringLength(500)]
         public string Picture { get; set; }
+        public ICollection<Product> Products { get; set; }
     }
 }

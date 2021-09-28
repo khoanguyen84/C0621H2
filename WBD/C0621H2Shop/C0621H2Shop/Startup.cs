@@ -1,4 +1,5 @@
 using C0621H2Shop.Contexts;
+using C0621H2Shop.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,6 +28,7 @@ namespace C0621H2Shop
         {
             services.AddControllersWithViews();
             services.AddDbContext<C0621H1ShopDBContext>(option => option.UseSqlServer(Configuration.GetConnectionString("C0621H1ShopDbConnection")));
+            services.AddScoped<ICategoryService, CategoryService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,7 +55,7 @@ namespace C0621H2Shop
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Category}/{action=Index}/{id?}");
             });
         }
     }
