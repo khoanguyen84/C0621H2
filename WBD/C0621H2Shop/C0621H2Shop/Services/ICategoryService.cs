@@ -1,4 +1,5 @@
 ﻿using C0621H2Shop.Entities;
+using C0621H2Shop.Models.Category;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,5 +11,7 @@ namespace C0621H2Shop.Services
     {
         List<Category> Gets();
         Category Get(int CategoryId);
+        bool Create(Create create);
+        bool Edit(Edit edit);
     }
 }
