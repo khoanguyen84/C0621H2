@@ -60,7 +60,7 @@ namespace C0621H2Shop.Contexts
                     ProductName = "iPhone 12",
                     Price = 18000000,
                     Quantity = 12,
-                    Pictures = "~/wwwroot/images/iphone12.jpg",
+                    Pictures = "~/images/iphone12.jpg",
                     CategoryId = 1
                 },
                 new Product()
@@ -69,7 +69,7 @@ namespace C0621H2Shop.Contexts
                     ProductName = "Asus",
                     Price = 12000000,
                     Quantity = 10,
-                    Pictures = "~/wwwroot/images/laptop.jpg",
+                    Pictures = "~/images/laptop.jpg",
                     CategoryId = 2
                 },
                 new Product()
@@ -78,7 +78,7 @@ namespace C0621H2Shop.Contexts
                     ProductName = "PC",
                     Price = 13500000,
                     Quantity = 7,
-                    Pictures = "~/wwwroot/images/pc.jpg",
+                    Pictures = "~/images/pc.jpg",
                     CategoryId = 3
                 });
         }

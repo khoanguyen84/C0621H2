@@ -1,0 +1,15 @@
+﻿using C0621H2Shop.Entities;
+using C0621H2Shop.Models.Product;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace C0621H2Shop.Services
+{
+    public interface IProductService
+    {
+        List<Product> GetProductByCategoryId(int categoryId);
+        bool Create(CreateProduct model);
+    }
+}

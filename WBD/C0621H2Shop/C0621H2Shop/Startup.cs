@@ -29,6 +29,7 @@ namespace C0621H2Shop
             services.AddControllersWithViews();
             services.AddDbContext<C0621H1ShopDBContext>(option => option.UseSqlServer(Configuration.GetConnectionString("C0621H1ShopDbConnection")));
             services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IProductService, ProductService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

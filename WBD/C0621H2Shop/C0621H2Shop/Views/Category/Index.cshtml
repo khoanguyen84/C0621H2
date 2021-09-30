@@ -21,7 +21,7 @@
             <td>@cat.CategoryId</td>
             <td><i class="@cat.Picture"> @cat.CategoryName</i></td>
             <td>@cat.Description</td>
-            <td class="text-center">@cat.Products.Count()</td>
+            <td class="text-center"><a title="show products" class="btn btn-outline-info btn-sm" asp-controller="Product" asp-action="Index" asp-route-catId="@cat.CategoryId">@cat.Products.Count()</a></td>
             <td class="text-right">
                 <a asp-controller="Category" asp-action="Edit" asp-route-catId="@cat.CategoryId" class="btn btn-warning">Edit</a>
                 <a asp-controller="Category" asp-action="Remove" asp-route-catId="@cat.CategoryId" class="btn btn-danger">Remove</a>
