@@ -11,5 +11,8 @@ namespace C0621H2Shop.Services
     {
         List<Product> GetProductByCategoryId(int categoryId);
         bool Create(CreateProduct model);
+        bool Edit(EditProduct model);
+        Product Get(int productId);
+        bool Remove(int productId);
     }
 }

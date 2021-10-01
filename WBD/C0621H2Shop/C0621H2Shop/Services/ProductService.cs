@@ -39,9 +39,48 @@ namespace C0621H2Shop.Services
             }
         }
 
+        public bool Edit(EditProduct model)
+        {
+            try
+            {
+                var product = Get(model.ProductId);
+                product.CategoryId = model.CategoryId;
+                product.Pictures = model.Pictures;
+                product.Price = model.Price;
+                product.ProductName = model.ProductName;
+                product.Quantity = model.Quantity;
+                product.ProductId = model.ProductId;
+                context.Attach(product);
+                return context.SaveChanges() > 0;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public Product Get(int productId)
+        {
+            return context.Products.Include(p => p.Category).FirstOrDefault(p => p.ProductId == productId);
+        }
+
         public List<Product> GetProductByCategoryId(int categoryId)
         {
             return context.Products.Include(p => p.Category).Where(p => p.CategoryId == categoryId).ToList();
+        }
+
+        public bool Remove(int productId)
+        {
+            try
+            {
+                var product = Get(productId);
+                context.Remove(product);
+                return context.SaveChanges() > 0;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
     }
 }

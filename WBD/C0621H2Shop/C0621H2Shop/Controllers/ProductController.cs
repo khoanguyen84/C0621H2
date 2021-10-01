@@ -49,5 +49,65 @@ namespace C0621H2Shop.Controllers
             ViewBag.Category = category;
             return View(model);
         }
+
+        [HttpGet]
+        [Route("Product/Edit/{productId}")]
+        public IActionResult Edit(int productId)
+        {
+            var product = productService.Get(productId);
+            var editProduct = new EditProduct()
+            {
+                CategoryId = product.CategoryId,
+                ProductId = product.ProductId,
+                Pictures = product.Pictures,
+                Price = product.Price,
+                ProductName = product.ProductName,
+                Quantity = product.Quantity
+            };
+            ViewBag.Category = category;
+            return View(editProduct);
+        }
+        [HttpPost]
+        public IActionResult Edit(EditProduct model)
+        {
+            if (ModelState.IsValid)
+            {
+                if (productService.Edit(model))
+                {
+                    return RedirectToAction("Index", "Product", new { catId = model.CategoryId });
+                }
+            }
+            ViewBag.Category = category;
+            return View(model);
+        }
+
+        [HttpGet]
+        [Route("Product/Detail/{productId}")]
+        public IActionResult Detail(int productId)
+        {
+            var product = productService.Get(productId);
+            var detailProduct = new DetailProduct()
+            {
+                CategoryId = product.CategoryId,
+                ProductId = product.ProductId,
+                Pictures = product.Pictures,
+                Price = product.Price,
+                ProductName = product.ProductName,
+                Quantity = product.Quantity
+            };
+            ViewBag.Category = category;
+            return View(detailProduct);
+        }
+
+        [HttpGet]
+        [Route("Product/Remove/{productId}")]
+        public IActionResult Remove(int productId)
+        {
+            if (productService.Remove(productId))
+            {
+                return RedirectToAction("Index", "Product", new { catId = category.CategoryId });
+            }
+            return RedirectToAction("Index", "Detail", new { productId = productId });
+        }
     }
 }

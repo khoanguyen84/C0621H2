@@ -61,13 +61,13 @@
                 <img class="product_img" src="@Url.Content(product.Pictures)" />
             </td>
             <td class="text-right">
-                <a class="btn btn-success btn-sm text-white">
+                <a class="btn btn-success btn-sm text-white" asp-controller="Product" asp-action="Edit" asp-route-productId="@product.ProductId">
                     <i class="fa fa-edit"></i>
                 </a>
-                <a class="btn btn-warning btn-sm text-white">
+                <a class="btn btn-warning btn-sm text-white"  asp-controller="Product" asp-action="Detail" asp-route-productId="@product.ProductId">
                     <i class="fa fa-eye"></i>
                 </a>
-                <a class="btn btn-danger btn-sm text-white">
+                <a class="btn btn-danger btn-sm text-white" asp-controller="Product" asp-action="Detail" asp-route-productId="@product.ProductId">
                     <i class="fa fa-trash"></i>
                 </a>
             </td>
