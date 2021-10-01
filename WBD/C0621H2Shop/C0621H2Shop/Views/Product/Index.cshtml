@@ -8,14 +8,17 @@
         var info = CultureInfo.GetCultureInfo("vi-VN");
         return String.Format(info, "{0:C0}", number);
     }
-
+    var category = ViewBag.Category as C0621H2Shop.Entities.Category;
 }
 
-<h1>@Model.FirstOrDefault().Category.CategoryName</h1>
+<h1>@category.CategoryName</h1>
 
 <p>
     <a class="btn btn-primary" asp-action="Create">
         <i class="fa fa-plus"> Create</i>
+    </a>
+    <a class="btn btn-outline-secondary" asp-controller="Category" asp-action="Index">
+        <i class="fa fa-backward"> Back to category</i>
     </a>
 </p>
 <table class="table table-bordered table-hover table-striped">

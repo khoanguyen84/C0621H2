@@ -1,4 +1,5 @@
 ﻿using C0621H2Shop.Entities;
+using C0621H2Shop.Models.Product;
 using C0621H2Shop.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -24,6 +25,7 @@ namespace C0621H2Shop.Controllers
         public IActionResult Index(int catId)
         {
             category = categoryService.Get(catId);
+            ViewBag.Category = category;
             return View(productService.GetProductByCategoryId(catId));
         }
         [HttpGet]
@@ -31,6 +33,21 @@ namespace C0621H2Shop.Controllers
         {
             ViewBag.Category = category;
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(CreateProduct model)
+        {
+            if (ModelState.IsValid)
+            {
+                model.CategoryId = category.CategoryId;
+                if (productService.Create(model))
+                {
+                    return RedirectToAction("Index", new { catId = category.CategoryId });
+                }
+            }
+            ViewBag.Category = category;
+            return View(model);
         }
     }
 }
