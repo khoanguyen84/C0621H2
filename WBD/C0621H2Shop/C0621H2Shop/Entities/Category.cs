@@ -19,5 +19,6 @@ namespace C0621H2Shop.Entities
         [StringLength(500)]
         public string Picture { get; set; }
         public ICollection<Product> Products { get; set; }
+        public bool Status { get; set; }
     }
 }

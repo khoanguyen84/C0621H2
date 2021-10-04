@@ -33,21 +33,24 @@ namespace C0621H2Shop.Contexts
                                 CategoryId = 1,
                                 CategoryName = "iPhone",
                                 Description = "iPhone",
-                                Picture = "fas fa-mobile-alt"
+                                Picture = "fas fa-mobile-alt",
+                                Status = true
                             },
                             new Category()
                             {
                                 CategoryId = 2,
                                 CategoryName = "Laptop",
                                 Description = "Laptop",
-                                Picture = "fas fa-laptop"
+                                Picture = "fas fa-laptop",
+                                Status = true
                             },
                             new Category()
                             {
                                 CategoryId = 3,
                                 CategoryName = "PC",
                                 Description = "Personal Computer",
-                                Picture = "fas fa-desktop"
+                                Picture = "fas fa-desktop",
+                                Status = true
                             });
         }
 

@@ -13,5 +13,6 @@ namespace C0621H2Shop.Services
         Category Get(int CategoryId);
         bool Create(Create create);
         bool Edit(Edit edit);
+        bool ChangeStatus(int categoryId);
     }
 }

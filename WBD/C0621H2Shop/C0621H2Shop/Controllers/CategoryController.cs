@@ -50,7 +50,8 @@ namespace C0621H2Shop.Controllers
                 CategoryId = category.CategoryId,
                 CategoryName = category.CategoryName,
                 Description = category.Description,
-                Picture = category.Picture
+                Picture = category.Picture,
+                Status = category.Status
             };
             return View(editView);
         }
@@ -67,5 +68,17 @@ namespace C0621H2Shop.Controllers
             }
             return View(edit);
         }
+
+        [HttpGet]
+        [Route("/Category/ChangeStatus/{catId}")]
+        public IActionResult ChangeStatus(int catId)
+        {
+            if (categoryService.ChangeStatus(catId))
+            {
+                return RedirectToAction("Index");
+            }
+            return RedirectToAction("Index");
+        }
+
     }
 }

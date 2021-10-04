@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace C0621H2Shop.Models.Product
         [Required]
         public int Quantity { get; set; }
         [Required]
-        public string Pictures { get; set; }
+        public IFormFile Pictures { get; set; }
         public int CategoryId { get; set; }
     }
 }

@@ -18,6 +18,22 @@ namespace C0621H2Shop.Services
             this.context = context;
         }
 
+        public bool ChangeStatus(int categoryId)
+        {
+            try
+            {
+                var category = Get(categoryId);
+                category.Status = !category.Status;
+                context.Attach(category);
+                context.Entry(category).State = EntityState.Modified;
+                return context.SaveChanges() > 0;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
         public bool Create(Create create)
         {
             try
@@ -26,7 +42,8 @@ namespace C0621H2Shop.Services
                 {
                     CategoryName = create.CategoryName,
                     Description = create.Description,
-                    Picture = create.Picture
+                    Picture = create.Picture,
+                    Status = create.Status
                 };
                 context.Add(category);
                 return context.SaveChanges() > 0;
@@ -46,7 +63,9 @@ namespace C0621H2Shop.Services
                 category.Description = edit.Description;
                 category.Picture = edit.Picture;
                 category.CategoryId = edit.CategoryId;
+                category.Status = edit.Status;
                 context.Attach(category);
+                context.Entry(category).State = EntityState.Modified;
                 return context.SaveChanges() > 0;
             }
             catch (Exception ex)

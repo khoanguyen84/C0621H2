@@ -10,7 +10,7 @@ namespace C0621H2Shop.Services
     public interface IProductService
     {
         List<Product> GetProductByCategoryId(int categoryId);
-        bool Create(CreateProduct model);
+        bool Create(Product model);
         bool Edit(EditProduct model);
         Product Get(int productId);
         bool Remove(int productId);

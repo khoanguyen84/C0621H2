@@ -3,14 +3,16 @@ using C0621H2Shop.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace C0621H2Shop.Migrations
 {
     [DbContext(typeof(C0621H1ShopDBContext))]
-    partial class C0621H1ShopDBContextModelSnapshot : ModelSnapshot
+    [Migration("20211004032402_Alter_Category_Add_Status_Column")]
+    partial class Alter_Category_Add_Status_Column
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -53,7 +55,7 @@ namespace C0621H2Shop.Migrations
                             CategoryName = "iPhone",
                             Description = "iPhone",
                             Picture = "fas fa-mobile-alt",
-                            Status = true
+                            Status = false
                         },
                         new
                         {
@@ -61,7 +63,7 @@ namespace C0621H2Shop.Migrations
                             CategoryName = "Laptop",
                             Description = "Laptop",
                             Picture = "fas fa-laptop",
-                            Status = true
+                            Status = false
                         },
                         new
                         {
@@ -69,7 +71,7 @@ namespace C0621H2Shop.Migrations
                             CategoryName = "PC",
                             Description = "Personal Computer",
                             Picture = "fas fa-desktop",
-                            Status = true
+                            Status = false
                         });
                 });
 

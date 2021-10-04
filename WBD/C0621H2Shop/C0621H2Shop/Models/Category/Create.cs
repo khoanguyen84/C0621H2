@@ -17,5 +17,6 @@ namespace C0621H2Shop.Models.Category
         [Required]
         [StringLength(500)]
         public string Picture { get; set; }
+        public bool Status { get; set; }
     }
 }

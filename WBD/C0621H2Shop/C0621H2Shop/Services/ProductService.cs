@@ -18,19 +18,11 @@ namespace C0621H2Shop.Services
             this.context = context;
         }
 
-        public bool Create(CreateProduct model)
+        public bool Create(Product model)
         {
             try
             {
-                var product = new Product()
-                {
-                    CategoryId = model.CategoryId,
-                    Pictures = model.Pictures,
-                    Price = model.Price,
-                    ProductName = model.ProductName,
-                    Quantity = model.Quantity
-                };
-                context.Add(product);
+                context.Add(model);
                 return context.SaveChanges() > 0;
             }
             catch (Exception ex)
@@ -45,7 +37,7 @@ namespace C0621H2Shop.Services
             {
                 var product = Get(model.ProductId);
                 product.CategoryId = model.CategoryId;
-                product.Pictures = model.Pictures;
+                //product.Pictures = model.Pictures;
                 product.Price = model.Price;
                 product.ProductName = model.ProductName;
                 product.Quantity = model.Quantity;

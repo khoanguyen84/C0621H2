@@ -1,9 +1,11 @@
 ﻿using C0621H2Shop.Entities;
 using C0621H2Shop.Models.Product;
 using C0621H2Shop.Services;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,12 +15,14 @@ namespace C0621H2Shop.Controllers
     {
         private readonly IProductService productService;
         private readonly ICategoryService categoryService;
+        private readonly IWebHostEnvironment webHostEnvironment;
         private static Category category = new Category();
 
-        public ProductController(IProductService productService, ICategoryService categoryService)
+        public ProductController(IProductService productService, ICategoryService categoryService, IWebHostEnvironment webHostEnvironment)
         {
             this.productService = productService;
             this.categoryService = categoryService;
+            this.webHostEnvironment = webHostEnvironment;
         }
 
         [Route("/Product/Index/{catId}")]
@@ -41,7 +45,27 @@ namespace C0621H2Shop.Controllers
             if (ModelState.IsValid)
             {
                 model.CategoryId = category.CategoryId;
-                if (productService.Create(model))
+                var filename = "no-picture.jpg";
+                
+                if (model.Pictures != null)
+                {
+                    var folderPath = Path.Combine(webHostEnvironment.WebRootPath, "images");
+                    filename = $"{Guid.NewGuid()}_{model.Pictures.FileName}";
+                    var filePath = Path.Combine(folderPath, filename);
+                    using (var fs = new FileStream(filePath, FileMode.Create))
+                    {
+                        model.Pictures.CopyTo(fs);
+                    }
+                }
+                var product = new Product()
+                {
+                    CategoryId = model.CategoryId,
+                    Pictures = $"~/images/{filename}",
+                    Price = model.Price,
+                    ProductName = model.ProductName,
+                    Quantity = model.Quantity
+                };
+                if (productService.Create(product))
                 {
                     return RedirectToAction("Index", new { catId = category.CategoryId });
                 }
@@ -59,7 +83,7 @@ namespace C0621H2Shop.Controllers
             {
                 CategoryId = product.CategoryId,
                 ProductId = product.ProductId,
-                Pictures = product.Pictures,
+                //Pictures = product.Pictures,
                 Price = product.Price,
                 ProductName = product.ProductName,
                 Quantity = product.Quantity
@@ -90,7 +114,7 @@ namespace C0621H2Shop.Controllers
             {
                 CategoryId = product.CategoryId,
                 ProductId = product.ProductId,
-                Pictures = product.Pictures,
+                //Pictures = product.Pictures,
                 Price = product.Price,
                 ProductName = product.ProductName,
                 Quantity = product.Quantity

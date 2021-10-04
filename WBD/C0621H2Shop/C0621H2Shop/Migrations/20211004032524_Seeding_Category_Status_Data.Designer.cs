@@ -3,14 +3,16 @@ using C0621H2Shop.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace C0621H2Shop.Migrations
 {
     [DbContext(typeof(C0621H1ShopDBContext))]
-    partial class C0621H1ShopDBContextModelSnapshot : ModelSnapshot
+    [Migration("20211004032524_Seeding_Category_Status_Data")]
+    partial class Seeding_Category_Status_Data
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
