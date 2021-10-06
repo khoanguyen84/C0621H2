@@ -83,7 +83,7 @@ namespace C0621H2Shop.Controllers
             {
                 CategoryId = product.CategoryId,
                 ProductId = product.ProductId,
-                //Pictures = product.Pictures,
+                ExistPicture = product.Pictures,
                 Price = product.Price,
                 ProductName = product.ProductName,
                 Quantity = product.Quantity
@@ -96,12 +96,37 @@ namespace C0621H2Shop.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (productService.Edit(model))
+                var product = productService.Get(model.ProductId);
+                product.CategoryId = model.CategoryId;
+                product.Price = model.Price;
+                product.ProductName = model.ProductName;
+                product.Quantity = model.Quantity;
+                product.ProductId = model.ProductId;
+                if (model.Pictures != null)
+                {
+                    var existFilename = product.Pictures.Split("/").Last();
+                    if (string.Compare(existFilename, "no-picture.jpg") != 0)
+                    {
+                        System.IO.File.Delete(Path.Combine(webHostEnvironment.WebRootPath, "images", existFilename));
+                    }
+                    
+                    var folderPath = Path.Combine(webHostEnvironment.WebRootPath, "images");
+                    var filename = $"{Guid.NewGuid()}_{model.Pictures.FileName}";
+                    var filePath = Path.Combine(folderPath, filename);
+                    using (var fs = new FileStream(filePath, FileMode.Create))
+                    {
+                        model.Pictures.CopyTo(fs);
+                    }
+                    product.Pictures = $"~/images/{filename}";
+                    
+                }
+                if (productService.Edit(product))
                 {
                     return RedirectToAction("Index", "Product", new { catId = model.CategoryId });
                 }
             }
             ViewBag.Category = category;
+            
             return View(model);
         }
 
@@ -114,7 +139,7 @@ namespace C0621H2Shop.Controllers
             {
                 CategoryId = product.CategoryId,
                 ProductId = product.ProductId,
-                //Pictures = product.Pictures,
+                PicturePath = product.Pictures,
                 Price = product.Price,
                 ProductName = product.ProductName,
                 Quantity = product.Quantity

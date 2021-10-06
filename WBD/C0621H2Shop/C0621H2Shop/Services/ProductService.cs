@@ -31,17 +31,10 @@ namespace C0621H2Shop.Services
             }
         }
 
-        public bool Edit(EditProduct model)
+        public bool Edit(Product product)
         {
             try
             {
-                var product = Get(model.ProductId);
-                product.CategoryId = model.CategoryId;
-                //product.Pictures = model.Pictures;
-                product.Price = model.Price;
-                product.ProductName = model.ProductName;
-                product.Quantity = model.Quantity;
-                product.ProductId = model.ProductId;
                 context.Attach(product);
                 return context.SaveChanges() > 0;
             }

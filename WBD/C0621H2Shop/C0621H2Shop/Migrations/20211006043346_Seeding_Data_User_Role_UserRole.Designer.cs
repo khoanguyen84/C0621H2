@@ -4,14 +4,16 @@ using C0621H2Shop.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace C0621H2Shop.Migrations
 {
     [DbContext(typeof(C0621H1ShopDBContext))]
-    partial class C0621H1ShopDBContextModelSnapshot : ModelSnapshot
+    [Migration("20211006043346_Seeding_Data_User_Role_UserRole")]
+    partial class Seeding_Data_User_Role_UserRole
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

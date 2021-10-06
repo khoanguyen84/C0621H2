@@ -10,12 +10,12 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit" method="POST">
+        <form enctype="multipart/form-data" asp-action="Edit" method="POST">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="ProductName" class="control-label"></label>
                 <input asp-for="ProductName" class="form-control" />
-                <input asp-for="ProductId" hidden class="form-control" value="@Model.ProductId"/>
+                <input asp-for="ProductId" hidden class="form-control" value="@Model.ProductId" />
                 <span asp-validation-for="ProductName" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -29,10 +29,13 @@
                 <span asp-validation-for="Quantity" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Pictures" class="control-label"></label>
-                <input asp-for="Pictures" class="form-control" />
-                <input asp-for="CategoryId" hidden class="form-control" value="@Model.CategoryId" />
-                <span asp-validation-for="Pictures" class="text-danger"></span>
+                <img id="product-image" class="product_img-lg" src="@Url.Content(Model.ExistPicture)" />
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="Pictures" name="Pictures" accept="image/*">
+                    <label class="custom-file-label" for="Pictures">Choose file</label>
+                    <input type="hidden" asp-for="ExistPicture" value="@Model.ExistPicture">
+                    <input asp-for="CategoryId" hidden class="form-control" value="@Model.CategoryId" />
+                </div>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
@@ -45,5 +48,13 @@
 </div>
 
 @section Scripts {
+    <script>
+        // Add the following code if you want the name of the file appear on select
+        $(".custom-file-input").on("change", function () {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+            $('#product-image').attr('src', window.URL.createObjectURL($(this)[0].files[0]))
+        });
+    </script>
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

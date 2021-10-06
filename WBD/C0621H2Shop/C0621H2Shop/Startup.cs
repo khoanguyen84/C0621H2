@@ -1,8 +1,10 @@
 using C0621H2Shop.Contexts;
+using C0621H2Shop.Entities;
 using C0621H2Shop.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -30,6 +32,9 @@ namespace C0621H2Shop
             services.AddDbContext<C0621H1ShopDBContext>(option => option.UseSqlServer(Configuration.GetConnectionString("C0621H1ShopDbConnection")));
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IProductService, ProductService>();
+            services.AddIdentity<AppUser, IdentityRole>()
+                                .AddEntityFrameworkStores<C0621H1ShopDBContext>()
+                                .AddDefaultTokenProviders();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

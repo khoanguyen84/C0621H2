@@ -20,9 +20,12 @@
     <Compile Remove="Migrations\20210928082950_Seeding_Category_Table.Designer.cs" />
     <Compile Remove="Migrations\20210928083835_Create_Product_Table.cs" />
     <Compile Remove="Migrations\20210928083835_Create_Product_Table.Designer.cs" />
+    <Compile Remove="Migrations\20211006043117_Seeding_Data_User_Role_UserRole.cs" />
+    <Compile Remove="Migrations\20211006043117_Seeding_Data_User_Role_UserRole.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.19" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.17" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.19" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.19" />
@@ -31,10 +34,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
 </Project>
