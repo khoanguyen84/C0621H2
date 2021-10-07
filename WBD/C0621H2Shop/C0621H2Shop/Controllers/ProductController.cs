@@ -1,6 +1,7 @@
 ﻿using C0621H2Shop.Entities;
 using C0621H2Shop.Models.Product;
 using C0621H2Shop.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace C0621H2Shop.Controllers
 {
+    [Authorize]
     public class ProductController : Controller
     {
         private readonly IProductService productService;
