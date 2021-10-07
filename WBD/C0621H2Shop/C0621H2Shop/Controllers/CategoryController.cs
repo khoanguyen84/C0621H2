@@ -1,5 +1,6 @@
 ﻿using C0621H2Shop.Models.Category;
 using C0621H2Shop.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace C0621H2Shop.Controllers
 {
+    [Authorize]
     public class CategoryController : Controller
     {
         private readonly ICategoryService categoryService;
@@ -16,6 +18,7 @@ namespace C0621H2Shop.Controllers
         {
             this.categoryService = categoryService;
         }
+
         public IActionResult Index()
         {
             return View(categoryService.Gets());

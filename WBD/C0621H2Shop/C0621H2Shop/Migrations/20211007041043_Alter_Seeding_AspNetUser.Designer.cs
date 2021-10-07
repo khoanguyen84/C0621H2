@@ -4,14 +4,16 @@ using C0621H2Shop.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace C0621H2Shop.Migrations
 {
     [DbContext(typeof(C0621H1ShopDBContext))]
-    partial class C0621H1ShopDBContextModelSnapshot : ModelSnapshot
+    [Migration("20211007041043_Alter_Seeding_AspNetUser")]
+    partial class Alter_Seeding_AspNetUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -93,16 +95,15 @@ namespace C0621H2Shop.Migrations
                             Id = "b74ddd14-6340-4840-95c2-db12554843e5",
                             AccessFailedCount = 0,
                             Avatar = "~/images/avatar.jpg",
-                            ConcurrencyStamp = "9da711c1-6773-418f-aba2-ed95ec9e86e2",
+                            ConcurrencyStamp = "b66cac5f-b565-4495-bfd8-617158efe704",
                             Email = "khoa.nguyen@codegym.vn",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "khoa.nguyen@codegym.vn",
                             NormalizedUserName = "khoa nguyen",
-                            PasswordHash = "AQAAAAEAACcQAAAAECrccNOXsWbBBNbhef2pW1U48TdjLJZHsIjDXPmVx0OGKQUCjadaikd1kQDglh2fsw==",
                             PhoneNumber = "0935216417",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "056f6327-44a4-4920-939a-1a7a4fed3c2e",
+                            SecurityStamp = "dc1ea003-bab2-4792-96c8-ba5656e3503e",
                             TwoFactorEnabled = false,
                             UserName = "Khoa Nguyen"
                         });

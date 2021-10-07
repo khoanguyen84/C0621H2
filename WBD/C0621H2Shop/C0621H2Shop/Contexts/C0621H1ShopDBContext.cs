@@ -97,13 +97,15 @@ namespace C0621H2Shop.Contexts
                 Id = "b74ddd14-6340-4840-95c2-db12554843e5",
                 UserName = "Khoa Nguyen",
                 Email = "khoa.nguyen@codegym.vn",
+                NormalizedEmail = "khoa.nguyen@codegym.vn",
+                NormalizedUserName = "khoa nguyen",
                 LockoutEnabled = false,
                 PhoneNumber = "0935216417",
                 Avatar = "~/images/avatar.jpg"
             };
 
             PasswordHasher<AppUser> passwordHasher = new PasswordHasher<AppUser>();
-            passwordHasher.HashPassword(user, "Asdf1234!");
+            user.PasswordHash = passwordHasher.HashPassword(user, "Asdf1234!");
 
             builder.Entity<AppUser>().HasData(user);
         }
