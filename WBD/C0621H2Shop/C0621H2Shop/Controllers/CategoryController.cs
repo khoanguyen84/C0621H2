@@ -18,7 +18,6 @@ namespace C0621H2Shop.Controllers
         {
             this.categoryService = categoryService;
         }
-
         public IActionResult Index()
         {
             return View(categoryService.Gets());
