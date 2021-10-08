@@ -14,6 +14,7 @@
                             <label asp-for="Email" class="col-md-4 col-form-label text-md-right"></label>
                             <div class="col-md-6">
                                 <input class="form-control" asp-for="Email" value="khoa.nguyen@codegym.vn" autofocus>
+                                <input type="hidden" asp-for="ReturnUrl" value="@ViewBag.ReturnUrl"/>
                                 <span asp-validation-for="Email" class="text-danger"></span>
                             </div>
                         </div>

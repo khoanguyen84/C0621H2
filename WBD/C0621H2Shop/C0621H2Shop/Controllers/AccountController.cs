@@ -19,8 +19,9 @@ namespace C0621H2Shop.Controllers
             this.userManager = userManager;
             this.signInManager = signInManager;
         }
-        public IActionResult Login()
+        public IActionResult Login(string ReturnUrl)
         {
+            ViewBag.ReturnUrl = ReturnUrl;
             return View();
         }
 
@@ -35,7 +36,9 @@ namespace C0621H2Shop.Controllers
                     var signResult = await signInManager.PasswordSignInAsync(user, model.Password, model.RemenberMe, false);
                     if (signResult.Succeeded)
                     {
-                        return RedirectToAction("Index", "Category");
+                        if(string.IsNullOrEmpty(model.ReturnUrl))
+                            return RedirectToAction("Index", "Category");
+                        return LocalRedirect(model.ReturnUrl);
                     }
                     ModelState.AddModelError("", "Invalid user or password");
                 }

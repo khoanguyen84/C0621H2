@@ -16,5 +16,6 @@ namespace C0621H2Shop.Models.Account
         public string Password { get; set; }
         [Display(Name = "Remember me")]
         public bool RemenberMe { get; set; }
+        public string ReturnUrl { get; set; }
     }
 }
