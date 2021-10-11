@@ -13,6 +13,6 @@ namespace C0621H2Shop.Models.Users
         public string UserName { get; set; }
         public string Avatar { get; set; }
         public string Phone { get; set; }
-        //public ICollection<IdentityRole> Roles { get; set; }
+        public string Roles { get; set; }
     }
 }
