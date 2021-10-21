@@ -2,3 +2,13 @@
     width: 60px;
     height: 60px;
 }
+
+.photo-lg{
+    width: 250px;
+    height: 240px;
+}
+
+.error{
+    font-weight: normal !important;
+    color: #dc3545!important;
+}
