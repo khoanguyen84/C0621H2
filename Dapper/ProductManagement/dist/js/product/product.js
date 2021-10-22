@@ -30,10 +30,11 @@ product.showData = function () {
                             <a href="javascript:;" class="btn btn-primary btn-sm" onclick='product.getProduct(${item.id})'>
                                 <i class="fa fa-edit"></i>
                             </a>
-                            <a href="javascript:;" class="btn ${item.Status ? 'btn-warning' : 'bg-secondary'}  btn-sm">
+                            <a href="javascript:;" class="btn ${item.Status ? 'btn-warning' : 'bg-secondary'}  btn-sm"
+                                onclick="product.changeStatus(${item.id}, ${item.Status})">
                                 <i class="fa ${item.Status ? 'fa-lock-open' : 'fa-lock'}"></i>
                             </a>
-                            <a href="javascript:;" class="btn btn-danger btn-sm">
+                            <a href="javascript:;" class="btn btn-danger btn-sm" onclick='product.removeProduct(${item.id})'>
                                 <i class="fa fa-trash"></i>
                             </a>
                         </td>
@@ -141,6 +142,78 @@ product.getProduct = function (id) {
             $('#productId').val(product.id);
             $('#addEditProduct').find(".modal-title").text("Update Product");
             $('#addEditProduct').modal('show');
+        }
+    });
+}
+
+product.removeProduct = function(id){
+    bootbox.confirm({
+        title: "Remove product?",
+        message: "Do you want to remove this product now? This cannot be undone.",
+        buttons: {
+            cancel: {
+                label: '<i class="fa fa-times"></i> Cancel'
+            },
+            confirm: {
+                label: '<i class="fa fa-check"></i> Confirm'
+            }
+        },
+        callback: function (result) {
+            if(result){
+                $.ajax({
+                    url: `https://616e3eb5a83a850017caa8a6.mockapi.io/products/${id}`,
+                    method: "DELETE",
+                    datatype: "json",
+                    success: function (result) {
+                        if (result) {
+                            $.notify("Product has been removed successfully!", "success");
+                            product.showData();
+                        }
+                        else {
+                            $.notify("Something went wrong, please try again!", "error");
+                        }
+                    }
+                });
+            }
+        }
+    });
+}
+
+product.changeStatus = function(id, status){
+    bootbox.confirm({
+        title: `${status ? 'Inactive' : 'Active'} product?` ,
+        message: `Do you want to ${status ? 'inactive' : 'active'} this product now?`,
+        buttons: {
+            cancel: {
+                label: '<i class="fa fa-times"></i> Cancel'
+            },
+            confirm: {
+                label: '<i class="fa fa-check"></i> Confirm'
+            }
+        },
+        callback: function (result) {
+            if(result){
+                let statusObj = {
+                    Status: !status,
+                };
+                $.ajax({
+                    url: `https://616e3eb5a83a850017caa8a6.mockapi.io/products/${id}`,
+                    method: "PUT",
+                    contentType: "application/json",
+                    datatype: "json",
+                    data: JSON.stringify(statusObj),
+                    success: function (result) {
+                        if (result) {
+                            $.notify(`Product has been ${status ? 'inactive' : 'active'} successfully!`, "success");
+                            product.showData();
+                        }
+                        else {
+                            $.notify("Something went wrong, please try again!", "error");
+                        }
+        
+                    }
+                });
+            }
         }
     });
 }
