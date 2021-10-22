@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- JQVMap -->
   <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
   <link rel="stylesheet" href="dist/css/product.css">
@@ -113,7 +114,7 @@
             </a>
           </div>
           <div class="row">
-            <table class="table table-bordered table-striped table-hover">
+            <table id="tbProduct" class="table table-bordered table-striped table-hover">
               <thead class="thead-dark">
                 <tr>
                   <th>#ID</th>
@@ -126,7 +127,7 @@
                   <th>Actions</th>
                 </tr>
               </thead>
-              <tbody id="tbProduct">
+              <tbody>
 
               </tbody>
             </table>
@@ -166,22 +167,24 @@
               <div class="col-6">
                 <div class="form-group">
                   <label for="productName">Product name:</label>
-                  <input type="text" class="form-control" id="productName" placeholder="product name"
-                    name="productName" data-rule-required="true" data-msg-required="Product name is required">
+                  <input type="text" class="form-control" id="productName" placeholder="product name" name="productName"
+                    data-rule-required="true" data-msg-required="Product name is required">
                   <input type="hidden" name="productId" id="productId" value="0">
                 </div>
                 <div class="form-group">
                   <label for="manufactory">Manufactory:</label>
-                  <input type="text" class="form-control" id="manufactory" placeholder="Manufactory"
-                    name="manufactory" data-rule-required="true" data-msg-required="Manufactory is required">
+                  <input type="text" class="form-control" id="manufactory" placeholder="Manufactory" name="manufactory"
+                    data-rule-required="true" data-msg-required="Manufactory is required">
                 </div>
                 <div class="form-group">
                   <label for="price">Price:</label>
-                  <input type="number" class="form-control" id="price" placeholder="Price" name="price" data-rule-required="true" data-msg-required="Price is required">
+                  <input type="number" class="form-control" id="price" placeholder="Price" name="price"
+                    data-rule-required="true" data-msg-required="Price is required">
                 </div>
                 <div class="form-group">
                   <label for="quantity">Quantity:</label>
-                  <input type="number" class="form-control" id="quantity" placeholder="Quantity" name="quantity" data-rule-required="true" data-msg-required="Quantity is required">
+                  <input type="number" class="form-control" id="quantity" placeholder="Quantity" name="quantity"
+                    data-rule-required="true" data-msg-required="Quantity is required">
                 </div>
                 <div class="custom-control custom-checkbox mb-3">
                   <input type="checkbox" class="custom-control-input" id="status" name="status">
@@ -190,12 +193,12 @@
               </div>
               <div class="col-6">
                 <div class="form-group">
-                  <img src="http://placeimg.com/640/480" class="rounded photo-lg" alt="Cinque Terre">
+                  <img src="http://placeimg.com/640/480" id="photo_img" class="rounded photo-lg" alt="Cinque Terre">
                 </div>
-                <div class="form-group">
-                  <label for="photo">Photo:</label>
-                  <input type="text" class="form-control" id="photo"
-                    name="photo" value="http://placeimg.com/640/480">
+                <div class="custom-file">
+                  <input type="file" class="custom-file-input" id="uploadPhoto" onchange="product.uploadPhoto()">
+                  <input type="hidden" class="form-control" id="photo" name="photo" value="">
+                  <label class="custom-file-label" for="uploadPhoto">Choose file</label>
                 </div>
               </div>
             </div>
@@ -207,10 +210,10 @@
           <a href="javascript:;" class="btn btn-primary" onclick="product.save()">Save</a>
           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
         </div>
-
       </div>
     </div>
   </div>
+
   <!-- jQuery -->
   <script src="plugins/jquery/jquery.min.js"></script>
   <!-- jQuery UI 1.11.4 -->
@@ -231,8 +234,11 @@
   <script src="plugins/moment/moment.min.js"></script>
   <!-- Tempusdominus Bootstrap 4 -->
   <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js" integrity="sha512-efUTj3HdSPwWJ9gjfGR71X9cvsrthIA78/Fvd/IN+fttQVy7XWkOAXb295j8B3cmm/kFKVxjiNYzKw9IQJHIuQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.min.js"
+    integrity="sha512-efUTj3HdSPwWJ9gjfGR71X9cvsrthIA78/Fvd/IN+fttQVy7XWkOAXb295j8B3cmm/kFKVxjiNYzKw9IQJHIuQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+  <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
   <!-- AdminLTE App -->
   <script src="dist/js/adminlte.js"></script>
   <script src="dist/js/product/product.js"></script>

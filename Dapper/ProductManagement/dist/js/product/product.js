@@ -9,9 +9,9 @@ product.showData = function () {
             data.sort(function (item1, item2) {
                 return item2.id - item1.id;
             });
-            $('#tbProduct').empty();
+            $('#tbProduct>tbody').empty();
             $.each(data, function (index, item) {
-                $('#tbProduct').append(`
+                $('#tbProduct>tbody').append(`
                     <tr>
                         <td>${item.id}</td>
                         <td>${item.ProductName}</td>
@@ -41,6 +41,7 @@ product.showData = function () {
                     </tr>
                 `);
             });
+            $('#tbProduct').DataTable();
         }
     });
 }
@@ -53,13 +54,13 @@ product.openModal = function () {
 
 product.save = function () {
     if ($('#addEditForm').valid()) {
-        if(Number($('#productId').val()) == 0){
+        if (Number($('#productId').val()) == 0) {
             let createObj = {
                 ProductName: $('#productName').val(),
                 Manufactory: $('#manufactory').val(),
                 Price: $('#price').val(),
                 Quantity: Number($('#quantity').val()),
-                Photo: "http://placeimg.com/640/480",
+                Photo: $('#photo').val(),
                 Status: $('#status').is(':checked'),
             };
             $.ajax({
@@ -77,18 +78,18 @@ product.save = function () {
                     else {
                         $.notify("Something went wrong, please try again!", "error");
                     }
-    
+
                 }
             });
         }
-        else{
+        else {
             let updateObj = {
                 id: Number($('#productId').val()),
                 ProductName: $('#productName').val(),
                 Manufactory: $('#manufactory').val(),
                 Price: $('#price').val(),
                 Quantity: Number($('#quantity').val()),
-                Photo: "http://placeimg.com/640/480",
+                Photo: $('#photo').val(),
                 Status: $('#status').is(':checked'),
             };
             $.ajax({
@@ -106,12 +107,12 @@ product.save = function () {
                     else {
                         $.notify("Something went wrong, please try again!", "error");
                     }
-    
+
                 }
             });
         }
 
-        
+
     }
 }
 
@@ -137,6 +138,7 @@ product.getProduct = function (id) {
             $('#manufactory').val(product.Manufactory);
             $('#price').val(product.Price);
             $('#quantity').val(product.Quantity);
+            $('#photo_img').prop('src', product.Photo);
             $('#photo').val(product.Photo);
             $('#status').prop("checked", product.Status);
             $('#productId').val(product.id);
@@ -146,7 +148,7 @@ product.getProduct = function (id) {
     });
 }
 
-product.removeProduct = function(id){
+product.removeProduct = function (id) {
     bootbox.confirm({
         title: "Remove product?",
         message: "Do you want to remove this product now? This cannot be undone.",
@@ -159,7 +161,7 @@ product.removeProduct = function(id){
             }
         },
         callback: function (result) {
-            if(result){
+            if (result) {
                 $.ajax({
                     url: `https://616e3eb5a83a850017caa8a6.mockapi.io/products/${id}`,
                     method: "DELETE",
@@ -179,9 +181,9 @@ product.removeProduct = function(id){
     });
 }
 
-product.changeStatus = function(id, status){
+product.changeStatus = function (id, status) {
     bootbox.confirm({
-        title: `${status ? 'Inactive' : 'Active'} product?` ,
+        title: `${status ? 'Inactive' : 'Active'} product?`,
         message: `Do you want to ${status ? 'inactive' : 'active'} this product now?`,
         buttons: {
             cancel: {
@@ -192,7 +194,7 @@ product.changeStatus = function(id, status){
             }
         },
         callback: function (result) {
-            if(result){
+            if (result) {
                 let statusObj = {
                     Status: !status,
                 };
@@ -210,7 +212,7 @@ product.changeStatus = function(id, status){
                         else {
                             $.notify("Something went wrong, please try again!", "error");
                         }
-        
+
                     }
                 });
             }
@@ -218,6 +220,17 @@ product.changeStatus = function(id, status){
     });
 }
 
+product.uploadPhoto = function () {
+
+    if ($('#uploadPhoto')[0].files && $('#uploadPhoto')[0].files[0]) {
+        var FR = new FileReader();
+        FR.addEventListener("load", function (e) {
+            $('#photo_img').prop('src', e.target.result);
+            $('#photo').val(e.target.result);
+        });
+        FR.readAsDataURL($('#uploadPhoto')[0].files[0]);
+    }
+}
 $(document).ready(function () {
     product.showData();
 });
