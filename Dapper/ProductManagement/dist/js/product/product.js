@@ -2,46 +2,46 @@ var product = {};
 
 product.showData = function () {
     $.ajax({
-        url: "https://616e3eb5a83a850017caa8a6.mockapi.io/products",
+        url: "https://localhost:44383/Product",
         method: "GET",
         datatype: "json",
         success: function (data) {
             data.sort(function (item1, item2) {
-                return item2.id - item1.id;
+                return item2.productId - item1.productId;
             });
             $('#tbProduct>tbody').empty();
             $.each(data, function (index, item) {
                 $('#tbProduct>tbody').append(`
                     <tr>
-                        <td>${item.id}</td>
-                        <td>${item.ProductName}</td>
+                        <td>${item.productId}</td>
+                        <td>${item.productName}</td>
                         <td class='text-center'><img class="photo-sm" src=${item.Photo}></td>
                         <td class='text-right'>
-                            ${new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(Number(item.Price))}
+                            ${new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(Number(item.price))}
                         </td>
-                        <td class='text-right'>${item.Quantity.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</td>
-                        <td>${item.Manufactory}</td>
+                        <td class='text-right'>${item.quantity.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</td>
+                        <td>${item.manufactory}</td>
                         <td class='text-right'>
-                            <span class="badge ${item.Status ? 'bg-success' : 'bg-danger'}">
+                            <span class="badge ${item.status ? 'bg-success' : 'bg-danger'}">
                                 ${item.Status ? 'active' : 'inactive'}
                             </span>
                         </td>
                         <td>
-                            <a href="javascript:;" class="btn btn-primary btn-sm" onclick='product.getProduct(${item.id})'>
+                            <a href="javascript:;" class="btn btn-primary btn-sm" onclick='product.getProduct(${item.productId})'>
                                 <i class="fa fa-edit"></i>
                             </a>
-                            <a href="javascript:;" class="btn ${item.Status ? 'btn-warning' : 'bg-secondary'}  btn-sm"
-                                onclick="product.changeStatus(${item.id}, ${item.Status})">
-                                <i class="fa ${item.Status ? 'fa-lock-open' : 'fa-lock'}"></i>
+                            <a href="javascript:;" class="btn ${item.status ? 'btn-warning' : 'bg-secondary'}  btn-sm"
+                                onclick="product.changeStatus(${item.productId}, ${item.status})">
+                                <i class="fa ${item.status ? 'fa-lock-open' : 'fa-lock'}"></i>
                             </a>
-                            <a href="javascript:;" class="btn btn-danger btn-sm" onclick='product.removeProduct(${item.id})'>
+                            <a href="javascript:;" class="btn btn-danger btn-sm" onclick='product.removeProduct(${item.productId})'>
                                 <i class="fa fa-trash"></i>
                             </a>
                         </td>
                     </tr>
                 `);
             });
-            $('#tbProduct').DataTable();
+            // $('#tbProduct').DataTable();
         }
     });
 }
@@ -84,7 +84,7 @@ product.save = function () {
         }
         else {
             let updateObj = {
-                id: Number($('#productId').val()),
+                productId: Number($('#productId').val()),
                 ProductName: $('#productName').val(),
                 Manufactory: $('#manufactory').val(),
                 Price: $('#price').val(),
@@ -93,7 +93,7 @@ product.save = function () {
                 Status: $('#status').is(':checked'),
             };
             $.ajax({
-                url: `https://616e3eb5a83a850017caa8a6.mockapi.io/products/${updateObj.id}`,
+                url: `https://616e3eb5a83a850017caa8a6.mockapi.io/products/${updateObj.productId}`,
                 method: "PUT",
                 contentType: "application/json",
                 datatype: "json",
@@ -141,7 +141,7 @@ product.getProduct = function (id) {
             $('#photo_img').prop('src', product.Photo);
             $('#photo').val(product.Photo);
             $('#status').prop("checked", product.Status);
-            $('#productId').val(product.id);
+            $('#productId').val(product.productId);
             $('#addEditProduct').find(".modal-title").text("Update Product");
             $('#addEditProduct').modal('show');
         }
