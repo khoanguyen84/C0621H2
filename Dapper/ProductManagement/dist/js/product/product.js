@@ -1,8 +1,9 @@
 var product = {};
+var apiUrl = 'https://localhost:44383/Product';
 
 product.showData = function () {
     $.ajax({
-        url: "https://localhost:44383/Product",
+        url: apiUrl,
         method: "GET",
         datatype: "json",
         success: function (data) {
@@ -15,7 +16,7 @@ product.showData = function () {
                     <tr>
                         <td>${item.productId}</td>
                         <td>${item.productName}</td>
-                        <td class='text-center'><img class="photo-sm" src=${item.Photo}></td>
+                        <td class='text-center'><img class="photo-sm" src=${item.photo}></td>
                         <td class='text-right'>
                             ${new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(Number(item.price))}
                         </td>
@@ -58,13 +59,13 @@ product.save = function () {
             let createObj = {
                 ProductName: $('#productName').val(),
                 Manufactory: $('#manufactory').val(),
-                Price: $('#price').val(),
+                Price: Number($('#price').val()),
                 Quantity: Number($('#quantity').val()),
                 Photo: $('#photo').val(),
                 Status: $('#status').is(':checked'),
             };
             $.ajax({
-                url: "https://616e3eb5a83a850017caa8a6.mockapi.io/products",
+                url: apiUrl,
                 method: "POST",
                 contentType: "application/json",
                 datatype: "json",
@@ -87,13 +88,13 @@ product.save = function () {
                 productId: Number($('#productId').val()),
                 ProductName: $('#productName').val(),
                 Manufactory: $('#manufactory').val(),
-                Price: $('#price').val(),
+                Price: Number($('#price').val()),
                 Quantity: Number($('#quantity').val()),
                 Photo: $('#photo').val(),
                 Status: $('#status').is(':checked'),
             };
             $.ajax({
-                url: `https://616e3eb5a83a850017caa8a6.mockapi.io/products/${updateObj.productId}`,
+                url: `${apiUrl}/${updateObj.productId}`,
                 method: "PUT",
                 contentType: "application/json",
                 datatype: "json",
@@ -130,17 +131,17 @@ product.reset = function () {
 
 product.getProduct = function (id) {
     $.ajax({
-        url: `https://616e3eb5a83a850017caa8a6.mockapi.io/products/${id}`,
+        url: `${apiUrl}/${id}`,
         method: "GET",
         datatype: "json",
         success: function (product) {
-            $('#productName').val(product.ProductName);
-            $('#manufactory').val(product.Manufactory);
-            $('#price').val(product.Price);
-            $('#quantity').val(product.Quantity);
-            $('#photo_img').prop('src', product.Photo);
-            $('#photo').val(product.Photo);
-            $('#status').prop("checked", product.Status);
+            $('#productName').val(product.productName);
+            $('#manufactory').val(product.manufactory);
+            $('#price').val(product.price);
+            $('#quantity').val(product.quantity);
+            $('#photo_img').prop('src', product.photo);
+            $('#photo').val(product.photo);
+            $('#status').prop("checked", product.status);
             $('#productId').val(product.productId);
             $('#addEditProduct').find(".modal-title").text("Update Product");
             $('#addEditProduct').modal('show');
@@ -163,7 +164,7 @@ product.removeProduct = function (id) {
         callback: function (result) {
             if (result) {
                 $.ajax({
-                    url: `https://616e3eb5a83a850017caa8a6.mockapi.io/products/${id}`,
+                    url: `${apiUrl}/${id}`,
                     method: "DELETE",
                     datatype: "json",
                     success: function (result) {
@@ -197,9 +198,10 @@ product.changeStatus = function (id, status) {
             if (result) {
                 let statusObj = {
                     Status: !status,
+                    ProductId : id
                 };
                 $.ajax({
-                    url: `https://616e3eb5a83a850017caa8a6.mockapi.io/products/${id}`,
+                    url: `${apiUrl}/ChangeStatus/${id}`,
                     method: "PUT",
                     contentType: "application/json",
                     datatype: "json",
