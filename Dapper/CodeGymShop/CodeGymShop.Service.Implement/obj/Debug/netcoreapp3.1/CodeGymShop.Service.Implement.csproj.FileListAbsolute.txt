@@ -1,0 +1,14 @@
+C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.Service.Implement\bin\Debug\netcoreapp3.1\CodeGymShop.Service.Implement.deps.json
+C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.Service.Implement\bin\Debug\netcoreapp3.1\CodeGymShop.Service.Implement.dll
+C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.Service.Implement\bin\Debug\netcoreapp3.1\CodeGymShop.Service.Implement.pdb
+C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.Service.Implement\bin\Debug\netcoreapp3.1\CodeGymShop.Domain.dll
+C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.Service.Implement\bin\Debug\netcoreapp3.1\CodeGymShop.Service.Interface.dll
+C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.Service.Implement\bin\Debug\netcoreapp3.1\CodeGymShop.Domain.pdb
+C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.Service.Implement\bin\Debug\netcoreapp3.1\CodeGymShop.Service.Interface.pdb
+C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.Service.Implement\obj\Debug\netcoreapp3.1\CodeGymShop.Service.Implement.csproj.AssemblyReference.cache
+C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.Service.Implement\obj\Debug\netcoreapp3.1\CodeGymShop.Service.Implement.GeneratedMSBuildEditorConfig.editorconfig
+C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.Service.Implement\obj\Debug\netcoreapp3.1\CodeGymShop.Service.Implement.AssemblyInfoInputs.cache
+C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.Service.Implement\obj\Debug\netcoreapp3.1\CodeGymShop.Service.Implement.AssemblyInfo.cs
+C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.Service.Implement\obj\Debug\netcoreapp3.1\CodeGymShop.Service.Implement.csproj.CoreCompileInputs.cache
+C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.Service.Implement\obj\Debug\netcoreapp3.1\CodeGymShop.Service.Implement.dll
+C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.Service.Implement\obj\Debug\netcoreapp3.1\CodeGymShop.Service.Implement.pdb

@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31727.386
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeGymShop.API", "CodeGymShop.API\CodeGymShop.API.csproj", "{E261F856-B565-46E3-BB58-6C5F7024D3A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeGymShop.API", "CodeGymShop.API\CodeGymShop.API.csproj", "{E261F856-B565-46E3-BB58-6C5F7024D3A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeGymShop.Service.Interface", "CodeGymShop.Service.Interface\CodeGymShop.Service.Interface.csproj", "{768C6D5D-81A5-4AF6-A39D-532D9F47C794}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeGymShop.Service.Implement", "CodeGymShop.Service.Implement\CodeGymShop.Service.Implement.csproj", "{CA1B0222-EB4F-4B2B-99BA-4ABFAF15A1FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeGymShop.Domain", "CodeGymShop.Domain\CodeGymShop.Domain.csproj", "{264B389B-DD1F-4F74-84D8-2CA15A0C6EB8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{E261F856-B565-46E3-BB58-6C5F7024D3A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E261F856-B565-46E3-BB58-6C5F7024D3A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E261F856-B565-46E3-BB58-6C5F7024D3A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{768C6D5D-81A5-4AF6-A39D-532D9F47C794}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{768C6D5D-81A5-4AF6-A39D-532D9F47C794}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{768C6D5D-81A5-4AF6-A39D-532D9F47C794}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{768C6D5D-81A5-4AF6-A39D-532D9F47C794}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA1B0222-EB4F-4B2B-99BA-4ABFAF15A1FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA1B0222-EB4F-4B2B-99BA-4ABFAF15A1FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA1B0222-EB4F-4B2B-99BA-4ABFAF15A1FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA1B0222-EB4F-4B2B-99BA-4ABFAF15A1FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{264B389B-DD1F-4F74-84D8-2CA15A0C6EB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{264B389B-DD1F-4F74-84D8-2CA15A0C6EB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{264B389B-DD1F-4F74-84D8-2CA15A0C6EB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{264B389B-DD1F-4F74-84D8-2CA15A0C6EB8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

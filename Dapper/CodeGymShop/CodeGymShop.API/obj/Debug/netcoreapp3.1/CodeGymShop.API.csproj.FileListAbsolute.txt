@@ -59,3 +59,14 @@ C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.API\bin\Debug\netcoreapp
 C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.API\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.API\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.API\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.API\bin\Debug\netcoreapp3.1\Dapper.dll
+C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.API\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.API\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.API\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.API\bin\Debug\netcoreapp3.1\CodeGymShop.Domain.dll
+C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.API\bin\Debug\netcoreapp3.1\CodeGymShop.Service.Implement.dll
+C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.API\bin\Debug\netcoreapp3.1\CodeGymShop.Service.Interface.dll
+C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.API\bin\Debug\netcoreapp3.1\CodeGymShop.Domain.pdb
+C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.API\bin\Debug\netcoreapp3.1\CodeGymShop.Service.Implement.pdb
+C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.API\bin\Debug\netcoreapp3.1\CodeGymShop.Service.Interface.pdb
+C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.API\obj\Debug\netcoreapp3.1\CodeGymShop.API.csproj.CopyComplete

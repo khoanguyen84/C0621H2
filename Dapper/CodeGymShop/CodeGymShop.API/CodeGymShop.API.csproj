@@ -13,5 +13,11 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CodeGymShop.Domain\CodeGymShop.Domain.csproj" />
+    <ProjectReference Include="..\CodeGymShop.Service.Implement\CodeGymShop.Service.Implement.csproj" />
+    <ProjectReference Include="..\CodeGymShop.Service.Interface\CodeGymShop.Service.Interface.csproj" />
+  </ItemGroup>
+
 
 </Project>
