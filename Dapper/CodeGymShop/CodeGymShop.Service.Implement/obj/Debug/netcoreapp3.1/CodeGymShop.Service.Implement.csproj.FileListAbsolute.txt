@@ -12,3 +12,4 @@ C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.Service.Implement\obj\De
 C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.Service.Implement\obj\Debug\netcoreapp3.1\CodeGymShop.Service.Implement.csproj.CoreCompileInputs.cache
 C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.Service.Implement\obj\Debug\netcoreapp3.1\CodeGymShop.Service.Implement.dll
 C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.Service.Implement\obj\Debug\netcoreapp3.1\CodeGymShop.Service.Implement.pdb
+C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.Service.Implement\obj\Debug\netcoreapp3.1\CodeGymShop.Service.Implement.csproj.CopyComplete

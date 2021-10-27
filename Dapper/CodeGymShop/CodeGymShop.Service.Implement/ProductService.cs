@@ -33,9 +33,16 @@ namespace CodeGymShop.Service.Implement
             return result.ToList();
         }
 
-        public ProductItem Get(int productId)
+        public async Task<ProductItem> Get(int productId)
         {
-            throw new NotImplementedException();
+            DynamicParameters parameters = new DynamicParameters();
+            parameters.Add("@ProductId", productId);
+            return await SqlMapper.QueryFirstOrDefaultAsync<ProductItem>(
+                    cnn: connect,
+                    sql: "sp_GetProductById",
+                    param: parameters,
+                    commandType: CommandType.StoredProcedure
+                );
         }
     }
 }

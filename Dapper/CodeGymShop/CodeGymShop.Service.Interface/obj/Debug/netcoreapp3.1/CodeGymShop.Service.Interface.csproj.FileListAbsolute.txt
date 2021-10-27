@@ -8,6 +8,5 @@ C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.Service.Interface\obj\De
 C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.Service.Interface\obj\Debug\netcoreapp3.1\CodeGymShop.Service.Interface.AssemblyInfoInputs.cache
 C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.Service.Interface\obj\Debug\netcoreapp3.1\CodeGymShop.Service.Interface.AssemblyInfo.cs
 C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.Service.Interface\obj\Debug\netcoreapp3.1\CodeGymShop.Service.Interface.csproj.CoreCompileInputs.cache
-C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.Service.Interface\obj\Debug\netcoreapp3.1\CodeGymShop.Service.Interface.csproj.CopyComplete
 C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.Service.Interface\obj\Debug\netcoreapp3.1\CodeGymShop.Service.Interface.dll
 C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.Service.Interface\obj\Debug\netcoreapp3.1\CodeGymShop.Service.Interface.pdb

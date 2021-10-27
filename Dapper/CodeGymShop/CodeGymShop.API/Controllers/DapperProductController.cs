@@ -23,5 +23,12 @@ namespace CodeGymShop.API.Controllers
         {
             return await productService.Get();
         }
+
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<ProductItem> Get(int id)
+        {
+            return await productService.Get(id);
+        }
     }
 }

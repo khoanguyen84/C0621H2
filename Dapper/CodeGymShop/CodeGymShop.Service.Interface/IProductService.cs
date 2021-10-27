@@ -8,14 +8,8 @@ namespace CodeGymShop.Service.Interface
 {
     public interface IProductService
     {
-        //get all product
         Task<List<ProductItem>> Get();
-        //get product by id
-        ProductItem Get(int productId);
-        //create product
-        CreateProductResult Create(ProductItem product);
-        //update product
-        //remove product
-        //update product status
+        Task<ProductItem> Get(int productId);
+        CreateProductResult Create(ProductItem product);     
     }
 }
