@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CodeGymShop.API</name>
+    </assembly>
+    <members>
+        <member name="T:CodeGymShop.API.Controllers.DapperProductController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:CodeGymShop.API.Controllers.DapperProductController.#ctor(CodeGymShop.Service.Interface.IProductService)">
+            <summary>
+            
+            </summary>
+            <param name="productService"></param>
+        </member>
+        <member name="M:CodeGymShop.API.Controllers.DapperProductController.Get">
+            <summary>
+            Get all product
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CodeGymShop.API.Controllers.DapperProductController.Get(System.Int32)">
+            <summary>
+            Get product by id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

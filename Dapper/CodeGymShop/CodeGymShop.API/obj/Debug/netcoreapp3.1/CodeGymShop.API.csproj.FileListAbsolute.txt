@@ -69,4 +69,9 @@ C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.API\bin\Debug\netcoreapp
 C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.API\bin\Debug\netcoreapp3.1\CodeGymShop.Domain.pdb
 C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.API\bin\Debug\netcoreapp3.1\CodeGymShop.Service.Implement.pdb
 C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.API\bin\Debug\netcoreapp3.1\CodeGymShop.Service.Interface.pdb
-C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.API\obj\Debug\netcoreapp3.1\CodeGymShop.API.csproj.CopyComplete
+C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.API\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.API\obj\Debug\netcoreapp3.1\CodeGymShop.API.MvcApplicationPartsAssemblyInfo.cs
+C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.API\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\CodeGym\Class\C0621H2\Dapper\CodeGymShop\CodeGymShop.API\bin\Debug\netcoreapp3.1\CodeGymShop.API.xml

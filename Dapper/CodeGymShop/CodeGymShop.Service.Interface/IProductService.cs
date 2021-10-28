@@ -10,6 +10,6 @@ namespace CodeGymShop.Service.Interface
     {
         Task<List<ProductItem>> Get();
         Task<ProductItem> Get(int productId);
-        CreateProductResult Create(ProductItem product);     
+        CreateProductResult Create(ProductItem product);
     }
 }
